@@ -32,6 +32,7 @@ body {
 }
 
 .draggable-list li {
+    
     background-color: rgb(237, 248, 218);
     display: flex;
     flex: 1;
@@ -43,14 +44,34 @@ body {
     border-bottom: 10px solid var(--border-color);
 }
 
+
+
 .draggable-list .number {
-    background-color: var(--background-number-colorcolor);
+    border-radius: 10px;
+
+    background-color: var(--background-number-color);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 46px;
     height: 60px;
     width: 60px;
+}
+
+.draggable-list .person-name {
+    margin: 0 20px 0 0;
+}
+
+.draggable-list li.over .draggable {  /* this is the color of the LI when another is being dragged over */
+    background-color: slategray;
+}
+
+.draggable-list li.right .person-name {
+    color:rgba(30, 189, 51, 0.733);
+}
+
+.draggable-list li.wrong .person-name {
+    color:rgba(189, 102, 30, 0.733);
 }
 
 .draggable {
@@ -60,4 +81,21 @@ body {
     justify-content: space-between;
     padding: 15px;
     flex: 1;
+}
+
+.check-btn {
+    background-color: var(--background-number-color);
+    border: none;
+    color: var(--text-color);
+    padding: 20px 30px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.check-btn:active {
+    transform: scale(0.98);
+}
+
+.check-btn:focus {
+    outline: none;
 }
