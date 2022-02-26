@@ -14,13 +14,15 @@ const richestPeople = [
 // STORE THE LIST ITEMS
 
 const listItems = [];
-
 let dragStartIndex;
 
 createList();
 
 function createList() {
     [...richestPeople]
+        .map(a => ({ value: a, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(a => a.value)
         .forEach((person, index) => {
             const listItem = document.createElement('li');
             listItem.setAttribute('data-index', index);
@@ -31,9 +33,7 @@ function createList() {
                 <i class="fas fa-grip-lines"></i>
             </div>
             `;
-
             listItems.push(listItem);
-
             draggable_list.appendChild(listItem)
             
         })
